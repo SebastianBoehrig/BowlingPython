@@ -123,6 +123,9 @@ def IsValid(Split):
 #todo: check last paragraph for correctness, if it can be there if X and only one if /
 
 def evaluire(teil, doppler,einzler,Enderman):
+    # Double für eine Pos nach X
+    # Single für zwei Pos nach X oder eine Pos nach /
+    # Ende zeigt die Bonuskugeln an die nur zum Auswerten des letzten frames benötigt werden und nicht selber zählen.
     teil_resultat = 0
     Ende=Enderman
     if teil=="":
