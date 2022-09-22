@@ -2,7 +2,17 @@ import doctest
 import re
 
 def main():
-    print(bowling(str((input("please input a bowling game: ")))))
+    while True:
+        try:
+        #todo catch exceptions so errors dont quite the pogramm
+            print(bowling(str((input("please input a bowling game: ")))))
+        except Exception as e:
+            print(str(e))
+            pass
+        if input("Do you want to enter another game?(y/any):")=="y":
+            pass
+        else:
+            break
 
 def bowling(spiel):
     """
