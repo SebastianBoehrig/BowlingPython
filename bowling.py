@@ -35,6 +35,8 @@ def bowling(spiel):
     31
     >>> bowling("--|--|--|--|--|--|--|--|X|X||8/")
     48
+    >>> bowling("--|--|--|--|--|--|--|--|X|1/||8")
+    39
 
     >>> bowling("--|--|--|--|--|--|56|--|X|X||8/")
     Traceback (most recent call last):
@@ -70,6 +72,11 @@ def bowling(spiel):
     Traceback (most recent call last):
         ...
     Exception: String is formatted wrongly
+
+    >>> bowling("--|--|--|--|5|--|--|X|62|--||")
+    Traceback (most recent call last):
+        ...
+    Exception: Unknown Error occured here: 5
     """
     resultat=0
     return_tuple=(0,False,False,False)
@@ -94,7 +101,6 @@ def IsValid(Split):
         elif re.match("[1-9-]\/$",Split[9]):
             if len(Split[11])!=1:
                 raise Exception('Bonus too long: '+Split[11])
-        #incomplete /is only for 1 X for 2
         else:
             raise Exception('No Bonus required: '+Split[9])
         
@@ -116,11 +122,11 @@ def IsValid(Split):
             pass
         elif x=="":
             pass
+        elif len(x)==1 and re.match("[1-9-]",x) and Split[11]==x:
+            pass
         else:
             raise Exception('Unknown Error occured here: '+x)
     #print (Split)
-
-#todo: check last paragraph for correctness, if it can be there if X and only one if /
 
 def evaluire(teil, doppler,einzler,Enderman):
     # Double für eine Pos nach X
