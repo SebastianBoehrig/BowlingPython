@@ -230,8 +230,4 @@ X|X|X|X|X|X|X|X|X|X||XX
 X|7/|9-|X|-8|8/|-6|X|X|X||81
 """
 doctest.testmod()
-"""
-
-
-
-"""
+print("HelloBowling")
