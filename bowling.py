@@ -1,6 +1,9 @@
 import doctest
 import re
 
+def main():
+    print(bowling(str((input("please input a bowling game: ")))))
+
 def bowling(spiel):
     """
     >>> bowling("--|--|--|--|--|--|--|--|--|--||")
@@ -111,7 +114,6 @@ def IsValid(Split):
             if int(x[0])+int(x[1])<10:
                 pass
             else:
-                print("Ungültig")
                 raise Exception('This combination of Throws is not possible: '+x)
 
         elif re.match("[1-9-]{2}$",x):
@@ -230,4 +232,5 @@ X|X|X|X|X|X|X|X|X|X||XX
 X|7/|9-|X|-8|8/|-6|X|X|X||81
 """
 doctest.testmod()
-print("HelloBowling")
+if __name__ == "__main__":
+    main()
